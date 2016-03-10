@@ -1,7 +1,7 @@
 bikebomb
 ========
 
-Compare and contract mnotorcycle data.
+Compare and contrast mnotorcycle data
 
 Usage
 -----
