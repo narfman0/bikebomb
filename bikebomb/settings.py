@@ -18,6 +18,8 @@ INSTALLED_APPS = [
     'bikestats',
 ]
 
+SCRAPE_DIR = os.path.join(os.path.dirname(__file__), '../www.motorcyclespecs.co.za')
+
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 100
@@ -61,6 +63,11 @@ DATABASES = {
     }
 }
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "bikebomb/static"),
+    SCRAPE_DIR,
+]
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -82,3 +89,4 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

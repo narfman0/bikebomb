@@ -8,9 +8,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from bikestats.models import parse_all
-
-
-SCRAPE_DIR = os.path.join(os.path.dirname(__file__), '../www.motorcyclespecs.co.za')
+from bikebomb.settings import SCRAPE_DIR
 
 
 def index(request):
