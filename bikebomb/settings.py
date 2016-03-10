@@ -22,7 +22,7 @@ SCRAPE_DIR = os.path.join(os.path.dirname(__file__), '../www.motorcyclespecs.co.
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 100
+    'PAGE_SIZE': 300
 }
 
 MIDDLEWARE_CLASSES = [

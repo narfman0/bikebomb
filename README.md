@@ -22,10 +22,9 @@ Then got to localhost:8000 and win!
 TODO
 ----
 
-* Ingest stats for table
-* Make gulp/webpack project for vendor js and own js currently in static folder
 * Fix scrapers for more models
 * Add regex filters for columns e.g. model "(1200S|FZ-09)" to react-bootstrap-table
+* Make gulp/webpack project for vendor js and own js currently in static folder
 
 License
 -------
