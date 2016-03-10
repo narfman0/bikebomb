@@ -16,9 +16,11 @@ class MakeViewSet(viewsets.ModelViewSet):
 
 
 class ModelSerializer(serializers.ModelSerializer):
+    make = serializers.StringRelatedField(read_only=True)
+
     class Meta:
         model = Model
-        fields = '__all__'
+        fields = ('id', 'name', 'make', 'years', 'description')
 
 
 class ModelViewSet(viewsets.ModelViewSet):

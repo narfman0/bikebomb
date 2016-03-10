@@ -19,6 +19,14 @@ then symbolic link that data to your root directory.
 
 Then got to localhost:8000 and win!
 
+TODO
+----
+
+# Ingest stats for table
+# Make gulp/webpack project for vendor js and own js currently in static folder
+# Fix scrapers for more models
+# Design more intuitive way to select bike models instead of potentially terribly performant all models ever
+
 License
 -------
 
