@@ -1,0 +1,3 @@
+bikestats==1.0.4
+Django==1.9.4
+djangorestframework==3.3.0
