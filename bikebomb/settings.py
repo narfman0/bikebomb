@@ -21,8 +21,7 @@ INSTALLED_APPS = [
 SCRAPE_DIR = os.path.join(os.path.dirname(__file__), '../www.motorcyclespecs.co.za')
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 300
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
 }
 
 MIDDLEWARE_CLASSES = [

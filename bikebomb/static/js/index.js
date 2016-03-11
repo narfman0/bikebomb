@@ -1,26 +1,26 @@
 var BootstrapTable = ReactBootstrapTable.BootstrapTable;
 var TableHeaderColumn = ReactBootstrapTable.TableHeaderColumn;
 var BikeTable = React.createClass({
-  loadNextModelPage: function() {
-    var modelPage = this.state.modelPage;
+  loadNextModelGroup: function(limit) {
+    var modelOffset = this.state.modelOffset;
     var models = this.state.models;
-    var url = this.props.modelUrl + '?page=' + modelPage;
+    var url = this.props.modelUrl + '?offset=' + modelOffset + '&limit=' + limit;
     $.getJSON(url, function(data) {
       models = models.concat(data.results);
-      this.setState({models: models, modelPage: modelPage + 1});
+      this.setState({models: models, modelOffset: modelOffset + data.results.length});
       if(data.next){
         setTimeout(function(){
-          this.loadNextModelPage();
+          this.loadNextModelGroup(1000);
         }.bind(this), 0);
       }else{
-        this.loadNextStatPage();
+        this.loadNextStatGroup();
       }
     }.bind(this));
   },
-  loadNextStatPage: function() {
-    var statPage = this.state.statPage;
+  loadNextStatGroup: function() {
+    var statOffset = this.state.statOffset;
     var models = this.state.models;
-    var url = this.props.statUrl + '?page=' + statPage;
+    var url = this.props.statUrl + '?offset=' + statOffset + '&limit=' + 10000;
     $.getJSON(url, function(data) {
       for(var i=0; i<data.results.length; i++){
         var stat = data.results[i]
@@ -33,19 +33,19 @@ var BikeTable = React.createClass({
         }
         models[stat.model-1][stat.name] = stat.value;
       }
-      this.setState({models: models, statPage: statPage + 1});
+      this.setState({models: models, statOffset: statOffset + data.results.length});
       if(data.next){
         setTimeout(function(){
-          this.loadNextStatPage();
+          this.loadNextStatGroup();
         }.bind(this), 0);
       }
     }.bind(this));
   },
   componentDidMount: function() {
-    this.loadNextModelPage();
+    this.loadNextModelGroup(100);
   },
   getInitialState: function() {
-    return {models: [], modelPage: 1, statPage: 1};
+    return {models: [], modelOffset: 0, statOffset: 0};
   },
   render: function() {
     return (
