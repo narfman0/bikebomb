@@ -20,4 +20,4 @@ def index(request):
 def update(request):
     """ Update scrape """
     parse_all(SCRAPE_DIR)
-    return render(request, 'index.html', {})
+    return index(request)

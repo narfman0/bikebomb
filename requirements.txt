@@ -1,5 +1,5 @@
 beautifulsoup4==4.4.1
-bikestats==1.0.4
+bikestats==1.1.1
 Django==1.9.4
 djangorestframework==3.3.0
 requests==2.9.1

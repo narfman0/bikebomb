@@ -26,8 +26,6 @@ var BikeTable = React.createClass({
         var stat = data.results[i]
         if(/torque/i.test(stat.name)){
           stat.name = 'torque';
-        }else if(/(wet weight|unladen weight)/i.test(stat.name)){
-          stat.name = 'weight';
         }else if(/capacity/i.test(stat.name)){
           stat.name = 'capacity';
         }
@@ -59,8 +57,12 @@ var BikeTable = React.createClass({
             Model
           </TableHeaderColumn>
           <TableHeaderColumn dataSort={true}
-            dataField="years" filter={{type: "TextFilter", placeholder: "Please enter a value"}}>
-            Years
+            dataField="year_start" filter={{type: "TextFilter", placeholder: "Please enter a value"}}>
+            Year Start
+          </TableHeaderColumn>
+          <TableHeaderColumn dataSort={true}
+            dataField="year_end" filter={{type: "TextFilter", placeholder: "Please enter a value"}}>
+            Year End
           </TableHeaderColumn>
           <TableHeaderColumn dataSort={true}
             dataField="cost" filter={{type: "NumberFilter", placeholder: "Please enter a value"}}>

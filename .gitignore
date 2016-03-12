@@ -62,3 +62,4 @@ lib64
 www.motorcyclespecs.co.za
 tmp/
 db.sqlite3
+db.sqlite3-journal

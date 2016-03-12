@@ -9,7 +9,7 @@ class ModelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Model
-        fields = ('id', 'name', 'make', 'years', 'description')
+        fields = ('id', 'name', 'make', 'year_start', 'year_end', 'description')
 
 
 class ModelViewSet(viewsets.ReadOnlyModelViewSet):
