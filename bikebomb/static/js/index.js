@@ -49,19 +49,19 @@ var BikeTable = React.createClass({
     return (
       <BootstrapTable data={this.state.models} pagination={true} striped={true} hover={true} condensed={true}>
           <TableHeaderColumn dataSort={true}
-            dataField="make" filter={{type: "TextFilter", placeholder: "Please enter a value"}}>
+            dataField="make" filter={{type: "RegexFilter", placeholder: "Please enter a value"}}>
             Make
           </TableHeaderColumn>
           <TableHeaderColumn dataSort={true} isKey={true}
-            dataField="name" filter={{type: "TextFilter", placeholder: "Please enter a value"}}>
+            dataField="name" filter={{type: "RegexFilter", placeholder: "Please enter a value"}}>
             Model
           </TableHeaderColumn>
           <TableHeaderColumn dataSort={true}
-            dataField="year_start" filter={{type: "TextFilter", placeholder: "Please enter a value"}}>
+            dataField="year_start" filter={{type: "NumberFilter", placeholder: "Please enter a value"}}>
             Year Start
           </TableHeaderColumn>
           <TableHeaderColumn dataSort={true}
-            dataField="year_end" filter={{type: "TextFilter", placeholder: "Please enter a value"}}>
+            dataField="year_end" filter={{type: "NumberFilter", placeholder: "Please enter a value"}}>
             Year End
           </TableHeaderColumn>
           <TableHeaderColumn dataSort={true}
@@ -73,7 +73,7 @@ var BikeTable = React.createClass({
             Torque
           </TableHeaderColumn>
           <TableHeaderColumn dataSort={true}
-            dataField="capacity" filter={{type: "TextFilter", placeholder: "Please enter a value"}}>
+            dataField="capacity" filter={{type: "RegexFilter", placeholder: "Please enter a value"}}>
             Capacity
           </TableHeaderColumn>
           <TableHeaderColumn dataSort={true}
